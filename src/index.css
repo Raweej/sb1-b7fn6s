@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for tables */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E1 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #CBD5E1;
+    border-radius: 3px;
+  }
+}
+
+/* Responsive table styles */
+.responsive-table-container {
+  @apply w-full overflow-x-auto scrollbar-thin;
+}
+
+.responsive-table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+@media (max-width: 640px) {
+  .responsive-card {
+    @apply block p-4 bg-white rounded-lg shadow-sm mb-4;
+  }
+
+  .responsive-card-header {
+    @apply flex justify-between items-center mb-2;
+  }
+
+  .responsive-card-title {
+    @apply font-medium text-gray-900;
+  }
+
+  .responsive-card-content {
+    @apply space-y-2 text-sm text-gray-500;
+  }
+
+  .responsive-card-row {
+    @apply flex justify-between items-center;
+  }
+
+  .responsive-card-label {
+    @apply font-medium text-gray-500;
+  }
+}
+
+/* Stats grid responsiveness */
+.stats-grid {
+  @apply grid gap-4;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
